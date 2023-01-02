@@ -15,9 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <title>Pokedex</title>
             </Head>
             <NavBar />
-            <main>
-
-            </main>
+            <main className="min-h-[70vh]">{children}</main>
             <Footer />
         </>
     );

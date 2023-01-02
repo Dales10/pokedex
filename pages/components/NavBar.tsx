@@ -3,20 +3,31 @@ import Image from 'next/image';
 
 const NavBar = () => {
     return (
-        <nav>
-            <div>
-                <Image src='/images/pokeball.png' width='30' height='30' alt='pokeball'/>
-                <h1 className="4xl font-bold">Pokedex</h1>
+        <nav className='flex justify-between items-center py-4 px-5 mb-8 bg-gray-800 text-white'>
+            <div className='flex justify-center items-center'>
+                <Image
+                    src='/images/pokeball.png'
+                    width='30'
+                    height='30'
+                    alt='pokeball'
+                />
+                <h1 className="4xl font-bold ml-2">Pokedex</h1>
             </div>
-            <ul>
-                <li>
+            <ul className='flex'>
+                <li className='mr-5'>
                     <Link href='/' legacyBehavior>
-                        <a>Home</a>
+                        <a
+                            className='p-1 transition duration-[400ms] border-b-2 border-transparent hover:border-white'>
+                            Home
+                        </a>
                     </Link>
                 </li>
-                <li>
+                <li className='mr-5'>
                     <Link href='/about' legacyBehavior>
-                        <a>Sobre</a>
+                        <a
+                            className='p-1 transition duration-[400ms] border-b-2 border-transparent hover:border-white'>
+                            Sobre
+                        </a>
                     </Link>
                 </li>
             </ul>

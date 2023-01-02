@@ -1,9 +1,9 @@
 const Footer = () => {
 return (
-        <footer>
+        <footer className="flex items-center justify-center bg-gray-800 mt-8 border-t-4 border-gray-900 text-white">
             <p>
-                <span>Pokedex</span>
-                &copy;
+                <span className="font-bold">Pokedex</span>
+                &copy; 2023
             </p>
         </footer>
     );
