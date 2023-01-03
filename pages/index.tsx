@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export async function getStaticProps() {
   const maxPokemons = 251;
   const api = 'https://pokeapi.co/api/v2/pokemon/';
@@ -19,12 +21,22 @@ export async function getStaticProps() {
 const Home = ({ pokemons }: any) => {
   return (
     <>
-      <h1 className="4xl font-bold">Pokedex</h1>
-      <ul>
+      <div className="flex justify-center items-center mb-8">
+        <h1 className="4xl font-bold text-[#E33D33] text-center text-[3rem] mr-2">
+          Pokedex
+        </h1>
+        <Image
+          src='/images/pokeball.png'
+          width='50'
+          height='50'
+          alt='Image of pokeball'
+        />
+      </div>
+      <div className="flex flex-wrap justify-between items-center max-w-[1100px] mx-auto">
         {pokemons.map((pokemon: any) => {
-          return <li key={pokemon.id}>{pokemon.name} - {pokemon.id}</li>
+          return <p key={pokemon.id}>{pokemon.name} - {pokemon.id}</p>
         })}
-      </ul>
+      </div>
     </>
   );
 };
