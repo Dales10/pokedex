@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Card from "./components/Card";
 
 export async function getStaticProps() {
   const maxPokemons = 251;
@@ -34,7 +35,7 @@ const Home = ({ pokemons }: any) => {
       </div>
       <div className="flex flex-wrap justify-between items-center max-w-[1100px] mx-auto">
         {pokemons.map((pokemon: any) => {
-          return <p key={pokemon.id}>{pokemon.name} - {pokemon.id}</p>
+          return <Card key={pokemon.id} pokemon={pokemon} />
         })}
       </div>
     </>
